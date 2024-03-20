@@ -1,47 +1,66 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class User {
 
-  String name;
-  String seguidores[];
-  String seguidos[];
-  String tweets[];
+  private String name;
+  private List<String> seguidores;
+  private List<String> seguidos;
+  private List<String> tweets;
 
-  public User(String name, String[] seguidores, String[] seguidos, String[] tweets) {
+  public User(String name) {
     this.name = name;
-    this.seguidores = seguidores;
-    this.seguidos = seguidos;
-    this.tweets = tweets;
+    this.seguidores = new ArrayList<>();
+    this.seguidos = new ArrayList<>();
+    this.tweets = new ArrayList<>();
   }
 
   public String getName() {
     return name;
   }
 
-  public String[] getSeguidores() {
+  public List<String> getTweets() {
+    return tweets;
+  }
+
+  public List<String> getSeguidores() {
     return seguidores;
   }
 
-  public String[] getSeguidos() {
+  public List<String> getSeguidos() {
     return seguidos;
   }
 
-  public String[] getTweets() {
-    return tweets;
+  public void addTweet(String tweet) {
+    tweets.add(tweet);
+  }
+
+  public void addSeguidor(String seguidor) {
+    seguidores.add(seguidor);
+  }
+
+  public void addSeguido(String seguido) {
+    seguidos.add(seguido);
+  }
+
+  public void removeSeguidor(String seguidor) {
+    seguidores.remove(seguidor);
+  }
+
+  public void removeSeguido(String seguido) {
+    seguidos.remove(seguido);
+  }
+
+  public void removeTweet(String tweet) {
+    tweets.remove(tweet);
   }
 
   public void setName(String name) {
     this.name = name;
   }
 
-  public void setSeguidores(String[] seguidores) {
-    this.seguidores = seguidores;
-  }
-
-  public void setSeguidos(String[] seguidos) {
-    this.seguidos = seguidos;
-  }
-
-  public void setTweets(String[] tweets) {
-    this.tweets = tweets;
+  public String toString() {
+    return name;
   }
 
 }
