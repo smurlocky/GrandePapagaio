@@ -2,10 +2,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class User {
-
   private String name;
-  private List<String> seguidores;
-  private List<String> seguidos;
+  private List<User> seguidores;
+  private List<User> seguidos;
   private List<String> tweets;
 
   public User(String name) {
@@ -23,11 +22,11 @@ public class User {
     return tweets;
   }
 
-  public List<String> getSeguidores() {
+  public List<User> getSeguidores() {
     return seguidores;
   }
 
-  public List<String> getSeguidos() {
+  public List<User> getSeguidos() {
     return seguidos;
   }
 
@@ -35,21 +34,20 @@ public class User {
     tweets.add(tweet);
   }
 
-  public void addSeguidor(String seguidor) {
+  public void addSeguidor(User seguidor) {
     seguidores.add(seguidor);
   }
 
-  public void addSeguido(String seguido) {
-
+  public void addSeguido(User seguido) {
     if (!seguidos.contains(seguido))
       seguidos.add(seguido);
   }
 
-  public void removeSeguidor(String seguidor) {
+  public void removeSeguidor(User seguidor) {
     seguidores.remove(seguidor);
   }
 
-  public void removeSeguido(String seguido) {
+  public void removeSeguido(User seguido) {
     seguidos.remove(seguido);
   }
 
@@ -64,5 +62,4 @@ public class User {
   public String toString() {
     return name;
   }
-
 }
