@@ -40,7 +40,9 @@ public class User {
   }
 
   public void addSeguido(String seguido) {
-    seguidos.add(seguido);
+
+    if (!seguidos.contains(seguido))
+      seguidos.add(seguido);
   }
 
   public void removeSeguidor(String seguidor) {
